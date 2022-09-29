@@ -4,6 +4,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
+import time
 
 
 @pytest.fixture(scope="module")
@@ -14,8 +15,8 @@ def memory_cell():
 @pytest.fixture(scope='module')
 def browser():
     opts = Options()
-    opts.add_argument("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/10"
-                      "5.0.0.0 Safari/537.36")
+    opts.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko"
+                      ") Chrome/105.0.0.0 Safari/537.36")
     opts.add_argument("--disable-blink-features")
     opts.add_argument("--disable-blink-features=AutomationControlled")
     opts.add_experimental_option("excludeSwitches", ["enable-automation"])
